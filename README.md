@@ -1,21 +1,21 @@
-# Orbital Relay
+# orbital relay.
 
-**The grid went dark. Route the power back.**
+**puzzle ain't puzzling. something's wrong. ahh, the schema isn't proper here.**
 
-Orbital Relay is a tiny pixel-art puzzle game built as both a normal static website and a Manifest V3 Chrome extension. Rotate cable modules, reconnect solar power to the station core, and clear increasingly difficult sectors before the repair budget runs out.
+orbital relay is a simple pixel-art (not at the moment) game built as an additional extension for browsers based on chromium. the goal is so simple; rotate cables, connect them to each other, and get the ship to the work back again.
 
-## Play
+## how to play? so easy. (still in dev)
 
-- Click or press <kbd>Enter</kbd>/<kbd>Space</kbd> to rotate a relay clockwise.
-- Shift-click or right-click to rotate counter-clockwise.
-- Use the arrow keys to move focus around the grid.
-- Power every active module and the station core to clear the sector.
+- just click an lmb (left-mouse button); the grid with cable rotates clockwise.
+- click an rmb (right-mouse button); the grid happens to rotate counter-clockwise.
+- instead of moving your mouse around the table, you may move your target grid via arrow keys.
+- there you go! have fun, turn on the light!
 
-Boards grow from 4×4 to 7×7. Every board is generated from a valid solved network, then scrambled and checked before play.
+the board grows as you occure to complete more problems. begins with 4x4 grid and the maximum possible is 7x7.
 
 ## Run locally
 
-The project has no runtime or development dependencies.
+if you wanna play it locally, so be it. there are no specific dependencies or a runtime required to run it.
 
 ```bash
 npm test
@@ -24,7 +24,7 @@ npm run build
 npm run dev
 ```
 
-Open the local address printed by the static server.
+open the localhost given by the static server.
 
 ## Install in Chrome
 
@@ -33,6 +33,9 @@ Open the local address printed by the static server.
 3. Turn on **Developer mode**.
 4. Choose **Load unpacked**.
 5. Select the generated `dist/extension` folder.
+
+- run `npm run build:extension`
+- open `
 
 The toolbar icon opens the game at any time. When a top-level HTTP or HTTPS navigation fails because the connection, DNS, proxy, or destination is unavailable, the extension opens Orbital Relay in that tab. Security failures, canceled navigations, blocked requests, and subframe errors are deliberately ignored.
 
