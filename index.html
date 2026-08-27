@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07121f">
+    <meta name="description" content="Rotate the relay tiles and bring a silent orbital station back online.">
+    <title>Orbital Relay</title>
+    <link rel="icon" href="assets/icon-128.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#relay-board">Skip to relay grid</a>
+
+    <div class="stars stars-a" aria-hidden="true"></div>
+    <div class="stars stars-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Orbital Relay home">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>
+          <strong>ORBITAL RELAY</strong>
+          <small>STATION RECOVERY SYSTEM</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <span class="signal" id="network-state"><i aria-hidden="true"></i> Local system ready</span>
+        <button class="icon-button" id="sound-toggle" type="button" aria-pressed="false" aria-label="Mute sound">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="mission-shell">
+      <section class="briefing" aria-labelledby="mission-title">
+        <p class="eyebrow"><span>◆</span> Emergency transmission</p>
+        <h1 id="mission-title">THE GRID<br><em>WENT DARK.</em></h1>
+        <p class="lede">Rotate the relay modules. Reconnect solar power to the station core before your repair budget runs out.</p>
+
+        <div class="origin-card" id="origin-card" hidden>
+          <span class="origin-label">Signal lost from</span>
+          <strong id="origin-host">Unknown sector</strong>
+          <button class="retry-button" id="retry-button" type="button">Retry connection <span aria-hidden="true">↗</span></button>
+        </div>
+
+        <div class="instructions" aria-label="How to play">
+          <div><kbd>CLICK</kbd><span>Rotate clockwise</span></div>
+          <div><kbd>SHIFT</kbd><span>Rotate backward</span></div>
+          <div><kbd>ARROWS</kbd><span>Move keyboard focus</span></div>
+        </div>
+      </section>
+
+      <section class="console" aria-label="Orbital relay game console">
+        <div class="console-topline">
+          <div>
+            <span class="console-kicker">SECTOR <b id="sector-number">01</b></span>
+            <h2>POWER ROUTING ARRAY</h2>
+          </div>
+          <div class="core-status" id="core-status"><span aria-hidden="true"></span> CORE OFFLINE</div>
+        </div>
+
+        <div class="hud" aria-label="Mission statistics">
+          <div class="hud-cell"><span>Score</span><strong id="score-value">000000</strong></div>
+          <div class="hud-cell"><span>Moves</span><strong id="moves-value">00</strong></div>
+          <div class="hud-cell"><span>Best</span><strong id="best-value">000000</strong></div>
+          <div class="hud-cell"><span>Level</span><strong id="level-value">01</strong></div>
+        </div>
+
+        <div class="board-frame">
+          <div class="board-corner corner-tl" aria-hidden="true"></div>
+          <div class="board-corner corner-tr" aria-hidden="true"></div>
+          <div class="board-corner corner-bl" aria-hidden="true"></div>
+          <div class="board-corner corner-br" aria-hidden="true"></div>
+          <div class="edge-label input-label" aria-hidden="true">SOLAR INPUT</div>
+          <div class="edge-label output-label" aria-hidden="true">CORE LINK</div>
+          <div class="relay-board" id="relay-board" role="grid" aria-label="Power relay grid"></div>
+          <div class="scanline" aria-hidden="true"></div>
+        </div>
+
+        <div class="console-footer">
+          <p id="mission-status" role="status" aria-live="polite">Rotate a relay to begin the repair.</p>
+          <button class="new-run-button" id="new-run-button" type="button">New run</button>
+        </div>
+
+        <div class="result-panel" id="result-panel" hidden>
+          <div class="result-icon" aria-hidden="true">×</div>
+          <p class="eyebrow">Repair budget depleted</p>
+          <h2>STATION<br>STILL DARK</h2>
+          <p>You restored <strong id="result-levels">0 sectors</strong> and scored <strong id="result-score">0</strong>.</p>
+          <button class="primary-button" id="restart-button" type="button">Restart mission</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>ORBITAL RELAY // OFFLINE PROTOCOL 1.0</span>
+      <span>NO TELEMETRY · NO TRACKING · LOCAL SAVE</span>
+    </footer>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
+
