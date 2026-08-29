@@ -13,7 +13,7 @@ orbital relay is a simple pixel-art (not at the moment) game built as an additio
 
 the board grows as you occure to complete more problems. begins with 4x4 grid and the maximum possible is 7x7.
 
-## Run locally
+## run it locally
 
 if you wanna play it locally, so be it. there are no specific dependencies or a runtime required to run it.
 
@@ -26,42 +26,38 @@ npm run dev
 
 open the localhost given by the static server.
 
-## Install in Chrome
-
-1. Run `npm run build:extension`.
-2. Open `chrome://extensions`.
-3. Turn on **Developer mode**.
-4. Choose **Load unpacked**.
-5. Select the generated `dist/extension` folder.
+## run it on chrome
 
 - run `npm run build:extension`
-- open `
+- open `chrome://extensions`
+- turn on **developer mode**
+- click **load unpacked**
+- select `dist/extension/ directory within the project
 
-The toolbar icon opens the game at any time. When a top-level HTTP or HTTPS navigation fails because the connection, DNS, proxy, or destination is unavailable, the extension opens Orbital Relay in that tab. Security failures, canceled navigations, blocked requests, and subframe errors are deliberately ignored.
+when an http or https navigation fails due to a poor internet connection, DNS, proxy, or any other network reason, the orbital relay opens automatically within the tab with no redirection. you can go back to chrome dino via `chrome://dino`, by the way. security failures, canceled navigations, blocked requests, and subframe errors are systematically ignored.
 
 > Chrome does not allow extensions to modify arbitrary internal `chrome://` pages, so Orbital Relay does not alter `chrome://dino` itself.
+> it appears that google chrome does not allow extensions access `chrome://` internal url, so orbital relay does not alter `chrome://dino`.
 
-## Publish on GitHub
+## push it on gh
 
-The repository is prepared for `https://github.com/messadev/orbital-relay` but does not create or push that remote automatically.
+the repo is prepared for `https://github.com/messadf/orbital-relay` but does not create or push the remote automatically.
 
 ```bash
-git remote add origin https://github.com/messadev/orbital-relay.git
+git remote add origin https://github.com/messadf/orbital-relay.git
 git push -u origin main
 ```
 
-After the push, enable **Settings → Pages → Source: GitHub Actions**. The Pages workflow publishes the web game on every push to `main`. Pushing a tag such as `v1.0.0` creates a GitHub release with `orbital-relay-extension.zip`; every CI run also keeps a downloadable extension artifact.
+after the `git push -u origin main`, turn on **settings -> pages ->> source: github actions**, so the github pages may deploy 'main' branch of the project. every contribution within the code that has been applied to 'main' branch will automatically trigger the CI. pushing a tag such as `v1.0.0` creates a gh release with `orbital-relay-extension.zip`; every CI process also creates and keeps a downloadable extension file. 
 
-## Screenshot checklist
+<details>
+  <summary>screenshot checklist</summary>
 
-- Desktop mission view with a partially powered board
-- Mobile layout at approximately 390×844
-- Completed sector with **CORE ONLINE**
-- Offline redirect card showing a safe hostname
-- End-of-run panel
+  
+</details>
 
-## Privacy and license
+## privacy and license
 
-Orbital Relay uses no analytics, advertising, accounts, or remote runtime assets. High score and sound preference remain on the device. See [PRIVACY.md](PRIVACY.md) for details.
+orbital relay does not contain and gather no telemetry data, analytics, commercial ads, mandatory accounts, or remote runtime assets. the project is fully open-sourced. the sound effects and preferences remain on the device. see [PRIVACY.MD](PRIVACY.md) for further details.
 
-Released under the [MIT License](LICENSE).
+released under the [MIT License](LICENSE).
